@@ -198,11 +198,24 @@ header {
 .product-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-auto-flow: row;
   gap: 2rem;
 }
 
 .product.card {
+  display: grid;
   padding: 0;
+  grid-template-areas: 
+  "image"
+  "content"
+  "action";
+  grid-template-rows: auto auto auto auto auto auto;
+  gap: 0;
+}
+
+.product .card-image {
+  grid-area: image;
+  overflow: hidden;
 }
 
 .card-image img {
@@ -212,26 +225,30 @@ header {
   object-fit: cover;
 }
 
+.product .card-content {
+  display: grid;
+  grid-template-areas: 
+    "header price"
+    "category category"
+    "description description";
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: subgrid;
+  grid-row: 2/6;
+}
+
 .card-content {
-  padding: 0 1rem;
+  padding: 0.5rem 1rem;
 }
 
 .product-info {
-  display: flex;
-  flex-direction: column;
+  grid-area: content;
 }
 
-.card-content .product-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.product-title {
+  grid-area: header;
 }
 
-.product-header {
-  margin: 0.5rem 0;
-}
-
-.product-header h3 {
+.product-title h3 {
   font-size: 1rem;
   font-weight: bold;
   color: #33424ff8;
@@ -240,19 +257,22 @@ header {
   text-overflow: ellipsis;
 }
 
-.product-header .product-price {
+.product-price {
+  grid-area: price;
   color: rgb(23, 115, 207);
 }
 
 .product-category {
+  margin: 0.5rem 0 0.8rem 0;
+  grid-area: category;
   font-size: 0.8rem;
   color: #5f636a;
   font-weight: 300;
-  margin-bottom: 0.8rem;
 }
 
 .product-description {
-  font-size: 0.9rem;
+  grid-area: description;
+  font-size: 0.8rem;
   font-weight: 300;
   margin-bottom: 0.8rem;
 }
@@ -339,12 +359,19 @@ button:focus {
 
 @media screen and (min-width: 700px) and (max-width: 1024px) {
   .product-grid {
-    grid-template-columns: repeat(3, minmax(140px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   }
 
-  .card-content .product-header {
-    flex-direction: column;
-    align-items: flex-start;
+  .product .card-content {
+    display: grid;
+    grid-template-areas: 
+      "header header"
+      "price price"
+      "category category"
+      "description description";
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: subgrid;
+    grid-row: 2/6;
   }
 }
 
@@ -387,9 +414,16 @@ button:focus {
     padding: 0.5rem 1rem;
   }
 
-  .card-content .product-header {
-    flex-direction: column;
-    align-items: flex-start;
+  .product .card-content {
+    display: grid;
+    grid-template-areas: 
+      "header header"
+      "price price"
+      "category category"
+      "description description";
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: subgrid;
+    grid-row: 2/6;
   }
 
   .footer-content {
@@ -407,22 +441,23 @@ button:focus {
   }
 
   .card.horizontal {
-    flex-direction: column;
-    align-items: flex-start;
+      flex-direction: column;
+      align-items: flex-start;
   }
-
+  
   .product .card-action {
-    flex-direction: column;
-    align-items: flex-start;
+      flex-direction: column;
+      align-items: flex-start;
   }
   
   .product .card-action button {
-    width: 100%;
-    padding: 0.5rem 1rem;
+      width: 100%;
+      padding: 0.5rem 1rem;
   }
-
+  
   .footer-bottom {
-    flex-direction: column-reverse;
+      flex-direction: column-reverse;
+      text-align: center;
   }
 }
 
