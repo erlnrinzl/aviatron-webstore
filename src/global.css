@@ -380,7 +380,6 @@ button:focus {
 .faq-section {
   max-width: 800px;
   margin: 2rem auto;
-  padding: 0 1rem;
 }
 
 .faq-section h2 {
@@ -410,7 +409,7 @@ button:focus {
 
 .contact-us {
   max-width: 800px;
-  margin: 3rem auto;
+  margin:2rem auto;
   background-color: white;
   padding: 2rem 1.5rem;
   border-radius: 8px;
