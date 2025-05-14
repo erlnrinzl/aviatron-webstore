@@ -59,7 +59,7 @@ nav a:hover {
 .user-actions {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 3rem;
 }
 
 .user-actions button {
@@ -69,6 +69,29 @@ nav a:hover {
   padding: 0.5rem 1rem;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.cart-count {
+  display: none;
+}
+
+.cart-count.active {
+  display: flex;
+  background-color: rgb(23, 115, 207);
+  color: white;
+  border-radius: 50%;
+  padding: 0.25rem 0.25rem;
+  font-size: 0.75rem;
+}
+
+.cart-count {
+  position: absolute;
+  top: -5px;
+  right: -25px;
+}
+
+.cart-icon {
+  position: relative;
 }
 
 main {
