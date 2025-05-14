@@ -209,7 +209,7 @@ header {
     "image"
     "content"
     "action";
-  grid-template-rows: auto auto auto auto auto auto;
+  grid-template-rows: 5fr 0.5fr 0.5fr 1fr 0.5fr auto  ;
   gap: 0;
 }
 
@@ -220,7 +220,7 @@ header {
 
 .card-image img {
   width: 100%;
-  height: auto;
+  height: 100%;
   border-radius: 0.5rem;
   object-fit: cover;
 }
