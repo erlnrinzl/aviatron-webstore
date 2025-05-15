@@ -40,14 +40,11 @@ const imageLinkProcessor = (imageLink) => {
 }
 
 const filterProducts = (category) => {
-  console.log('Products:', products);
-  console.log('Selected Category:', category);
   const filteredProducts = products.filter((product) => {
-    console.log('Comparing:', product.category, 'with:', category);
     return product.category.trim().toLowerCase() === category.trim().toLowerCase();
   });
-  console.log('Filtered Products:', filteredProducts);
   renderProducts(filteredProducts);
+  return filteredProducts;
 }
 
 const applyFilterBtn = document.querySelector('#apply-filter-btn');
@@ -56,8 +53,8 @@ applyFilterBtn.addEventListener('click', () => {
   
   const selectedCategory = document.querySelector('#category-select').value;
   if (selectedCategory) {
-    filterProducts(selectedCategory);
-    productCountEl.innerHTML = `<span>${products.length} Products Found</span>`;
+    let filteredProducts = filterProducts(selectedCategory);
+    productCountEl.innerHTML = `<span>${filteredProducts.length} Products Found</span>`;
   } else {
     renderProducts(products);
     productCountEl.innerHTML = `<span>Showing all products</span>`;
