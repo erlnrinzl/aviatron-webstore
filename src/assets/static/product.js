@@ -11,6 +11,17 @@ const fetchProducts = async () => {
   renderProducts(products);
 }
 
+const updateCartCount = () => {
+  const cartCount = document.querySelector('.cart-count');
+  const cart = getCart();
+  const totalItems = cart.reduce((acc, item) => acc + item.quantity, 0);
+  cartCount.innerText = totalItems;
+  cartCount.classList.add('active');
+  cartCount.classList.remove('hidden');
+}
+
+updateCartCount();
+
 fetchProducts().catch((error) => {
     console.error('Error fetching products:', error);
   }
@@ -106,12 +117,77 @@ const renderProducts = (products) => {
         timerProgressBar: true
       });
 
-      const cartCount = document.querySelector('.cart-count');
-      const cart = getCart();
-      const totalItems = cart.reduce((acc, item) => acc + item.quantity, 0);
-      cartCount.innerText = totalItems;
-      cartCount.classList.add('active');
-      cartCount.classList.remove('hidden');
+      updateCartCount();
+    });
+  });
+
+  const viewDetailsButtons = document.querySelectorAll('.view-details');
+  viewDetailsButtons.forEach((button) => {
+    button.addEventListener('click', (event) => {
+      const productCard = event.target.closest('.product');
+      const productId = productCard.dataset.id;
+      const product = products.find((p) => p.id === productId);
+      // localStorage.setItem('selectedProduct', JSON.stringify(product));
+      // window.location.href = './product-detail.html';
+  
+      Swal.fire({
+        title: `<strong>${product.name}</strong>`,
+        width: '80%',
+        // icon: "info",
+        html: `
+          <div class="product-detail">
+            <div class="product-detail-image">
+              <img src=${imageLinkProcessor(product.image)} alt="product-image" />
+            </div>
+            <div class="product-detail-content">
+              <div class="product-detail-info">
+                <div class="product-detail-title">
+                  <div class="product-detail-category">
+                    <span>${product.category}</span>
+                  </div>
+                  <div class="product-detail-price">
+                    <span>${currencyFormatter(product.price)}</span>
+                  </div>
+                </div>
+                <div class="product-detail-description">
+                  <p>${product.description}</p>
+                </div>
+                <div class="product-detail-seller-container">
+                  <span>icon</span>
+                  <div class="product-detail-seller-info">
+                    <p>sold by</p>
+                    <strong>${product.seller}</strong>
+                  </div>
+                </div>
+              </div>
+              <div class="product-detail-action">
+                <button class="add-to-cart" id="swal-add-to-cart-btn">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+        `,
+        showCloseButton: true,
+        showCancelButton: false,
+        showConfirmButton: false,
+        didOpen: () => {
+          const addToCartButton = document.getElementById('swal-add-to-cart-btn');
+          addToCartButton.addEventListener('click', () => {
+            addToCart(product);
+            Swal.fire({
+              title: 'Success!',
+              text: 'Successfully added to cart',
+              icon: 'success',
+              toast: true,
+              position: 'bottom-end',
+              showConfirmButton: false,
+              timer: 1500,
+              timerProgressBar: true
+            });
+  
+            updateCartCount();
+          });
+        }
+      });
     });
   });
 }
