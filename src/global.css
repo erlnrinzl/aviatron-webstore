@@ -713,3 +713,67 @@ button:focus {
     gap: 1rem;
   }
 }
+
+/* Auth Styles */
+.auth-button {
+    background-color: rgb(23, 115, 207);
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    margin-left: 0.5rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.auth-button:hover {
+    background-color: rgb(19, 96, 173);
+    transform: translateY(-2px);
+}
+
+.profile-action {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.profile-info {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.profile-image {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile-name {
+    font-weight: 500;
+    color: #33424f;
+}
+
+.cart-icon {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #33424f;
+    text-decoration: none;
+}
+
+.cart-count {
+    background-color: rgb(23, 115, 207);
+    color: white;
+    padding: 0.2rem 0.5rem;
+    border-radius: 50%;
+    font-size: 0.8rem;
+}
+
+.cart-count.hidden {
+    display: none;
+}
+
+.cart-count.active {
+    display: inline-block;
+}
