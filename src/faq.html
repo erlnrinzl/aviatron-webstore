@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./global.css" />
+    <link rel="stylesheet" href="./faq.css" />
     <title>FAQ & Support - Aviatron</title>
   </head>
   <body>
@@ -17,14 +18,42 @@
       </div>
 
       <div class="nav-container">
-        <div class="nav-link"><a href="#">Home</a></div>
-        <div class="nav-link"><a href="./products.html">Product</a></div>
-        <div class="nav-link"><a href="#">FAQ & Support</a></div>
+        <div class="nav-link">
+          <a href="#">Home</a>
+        </div>
+        <div class="nav-link">
+          <a href="#">Product</a>
+        </div>
+        <div class="nav-link">
+          <a href="./faq.html">FAQ & Support</a>
+        </div>
       </div>
 
       <div class="user-actions">
-        <div class="user-action"><a href="#">Cart</a></div>
-        <div class="user-action"><button>Log Out</button></div>
+        <div class="user-action">
+          <a href="#">
+            <div class="cart-icon">
+              <span>Cart</span>
+              <span class="cart-count">0</span>
+            </div>
+          </a>
+        </div>
+        <div class="user-action">
+          <button>Log Out</button>
+        </div>
+      </div>
+    </nav>
+    <nav class="mobile-nav">
+      <div class="nav-container">
+        <div class="nav-link">
+          <a href="#">Home</a>
+        </div>
+        <div class="nav-link">
+          <a href="#">Product</a>
+        </div>
+        <div class="nav-link">
+          <a href="#">FAQ & Support</a>
+        </div>
       </div>
     </nav>
 
@@ -90,24 +119,27 @@
           </p>
         </div>
       </section>
+
       <!-- CONTACT SECTION -->
       <section class="contact-us" id="contac-us-section">
-        <h2>Contact Us</h2>
+        <div class="contac-card">
+          <h2>Contact Us</h2>
 
-        <div class="contact-info">
-          <p><strong>Email:</strong> support@aviatron.com</p>
-          <p><strong>Phone:</strong> +1 (800) 123-4567</p>
-          <p><strong>Hours:</strong> Mon–Fri, 9AM–6PM EST</p>
-          <p><strong>Address:</strong> 123 Drone Ave, Tech City, CA</p>
+          <div class="contact-info">
+            <p><strong>Email:</strong> support@aviatron.com</p>
+            <p><strong>Phone:</strong> +1 (800) 123-4567</p>
+            <p><strong>Hours:</strong> Mon–Fri, 9AM–6PM EST</p>
+            <p><strong>Address:</strong> 123 Drone Ave, Tech City, CA</p>
+          </div>
+
+          <form class="contact-form">
+            <input type="text" placeholder="Full Name" required />
+            <input type="email" placeholder="Email Address" required />
+            <input type="text" placeholder="Subject" required />
+            <textarea rows="4" placeholder="Message" required></textarea>
+            <button type="submit">Send Message</button>
+          </form>
         </div>
-
-        <form class="contact-form">
-          <input type="text" placeholder="Full Name" required />
-          <input type="email" placeholder="Email Address" required />
-          <input type="text" placeholder="Subject" required />
-          <textarea rows="4" placeholder="Message" required></textarea>
-          <button type="submit">Send Message</button>
-        </form>
       </section>
     </main>
 
@@ -155,5 +187,7 @@
         <p>Designed for drone enthusiasts and professionals worldwide</p>
       </div>
     </footer>
+
+    <script src="./assets/static/auth.js"></script>
   </body>
 </html>
