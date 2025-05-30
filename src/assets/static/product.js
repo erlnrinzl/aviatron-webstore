@@ -35,8 +35,9 @@ const currencyFormatter = (value) => {
 };
 
 const imageLinkProcessor = (imageLink) => {
-  const imagePath = imageLink.split('//1b862cb460a41862e490b0efbe1d94d8.cdn.bubble.io');
-  return "https://1b862cb460a41862e490b0efbe1d94d8.cdn.bubble.io/cdn-cgi/image/w=384,h=,f=auto,dpr=2,fit=contain" + imagePath[1];
+  const decodedImagePath = imageLink;
+  // const decodedImagePath = decodeURIComponent(imageLink);
+  return "./assets/images/" + decodedImagePath + ".jpg";
 }
 
 const filterProducts = (category) => {

@@ -135,13 +135,6 @@
   overflow: hidden;
 }
 
-.card-image img {
-  width: 100%;
-  height: 100%;
-  border-radius: 0.5rem;
-  object-fit: cover;
-}
-
 .product .card-content {
   display: grid;
   grid-template-areas:

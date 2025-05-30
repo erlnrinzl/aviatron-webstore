@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "Camera Drones",
+    "image":   "photo-1542754482-8fd5c91d006e_ixid%3DM3w2OTk3Mjl8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NDY0NTczNzR8%26ixlib%3Drb-4.0.3",
+    "description": "High-quality drones for stunning aerial photography."
+  },
+  {
+    "id": 2,
+    "name": "Racing Drones",
+    "image": "photo-1549000180-618a3811170c_ixid%3DM3w2OTk3Mjl8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NDY0NTczNzV8%26ixlib%3Drb-4.0.3",
+    "description": "Fast and agile drones for competitive racing."
+  },
+  {
+    "id": 3,
+    "name": "Accessories",
+    "image": "photo-1566933734335-d31550181fe6_ixid%3DM3w2OTk3Mjl8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NDY0NTczNzV8%26ixlib%3Drb-4.0.3",
+    "description": "Essential gear to enhance your drone experience."
+  },
+  {
+    "id": 4,
+    "name": "Spare Parts",
+    "image": "photo-1647094327595-7fbf02f8dfd5_ixid%3DM3w2OTk3Mjl8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NDY0NTczNzZ8%26ixlib%3Drb-4.0.3",
+    "description": "Replacement parts for all major drone models."
+  },
+  {
+    "id": 5,
+    "name": "Drone Kits",
+    "image":   "photo-1542754482-8fd5c91d006e_ixid%3DM3w2OTk3Mjl8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NDY0NTczNzR8%26ixlib%3Drb-4.0.3",
+    "description": "Complete kits for building your own drone."
+  }
+]
