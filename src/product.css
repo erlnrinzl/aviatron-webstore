@@ -138,7 +138,8 @@
 .product .card-content {
   display: grid;
   grid-template-areas:
-    "header price"
+    "header header"
+    "price price"
     "category category"
     "description description";
   grid-template-columns: 3fr 1fr;
@@ -168,6 +169,7 @@
 }
 
 .product-price {
+  margin: 0.5rem 0;
   grid-area: price;
   color: rgb(23, 115, 207);
 }
@@ -200,6 +202,7 @@
 }
 
 .product .card-action .view-details {
+  text-decoration: none;
   background: none;
   /* padding: 0; */
   color: #33424ff8;

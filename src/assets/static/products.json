@@ -3,11 +3,19 @@
     "id": "PR001",
     "category": "Drones",
     "description": "High-end drone with advanced features for enthusiasts.",
-    "image":   "photo-1542754482-8fd5c91d006e_ixid%3DM3w2OTk3Mjl8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NDY0NTczNzR8%26ixlib%3Drb-4.0.3",
+    "image": "photo-1542754482-8fd5c91d006e_ixid%3DM3w2OTk3Mjl8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NDY0NTczNzR8%26ixlib%3Drb-4.0.3",
     "name": "SkyMaster Drone",
     "price": "999.99",
     "seller": "jack.reacher@example.com",
-    "Creation Date": "May 5, 2025 10:03 pm"
+    "Creation Date": "May 5, 2025 10:03 pm",
+    "technical_specification": [
+      { "specName": "Flight Time", "value": "34 minutes (with standard battery)" },
+      { "specName": "Camera", "value": "4K/30fps video, 20MP Hasselblad sensor" },
+      { "specName": "Range", "value": "10 km (OcuSync 3.0 transmission)" },
+      { "specName": "Max Speed", "value": "68 km/h (Sport Mode)" },
+      { "specName": "Weight", "value": "795 g (including battery)" },
+      { "specName": "GPS", "value": "Dual-band GNSS (GPS + Galileo)" }
+    ]
   },
   {
     "id": "PR002",
@@ -17,7 +25,15 @@
     "name": "VoltXtend Battery",
     "price": "199.99",
     "seller": "sammy.solar@example.com",
-    "Creation Date": "May 5, 2025 10:03 pm"
+    "Creation Date": "May 5, 2025 10:03 pm",
+    "technical_specification": [
+      { "specName": "Capacity", "value": "6000 mAh (77Wh)" },
+      { "specName": "Voltage", "value": "11.4V (3S Li-Po)" },
+      { "specName": "Charge Time", "value": "90 minutes (with 100W charger)" },
+      { "specName": "Compatibility", "value": "SkyMaster/HiFly series drones" },
+      { "specName": "Cycle Life", "value": "300+ charges (80% capacity retention)" },
+      { "specName": "Temperature Range", "value": "-10°C to 40°C" }
+    ]
   },
   {
     "id": "PR003",
@@ -27,7 +43,15 @@
     "name": "ClipCam Camera",
     "price": "599.99",
     "seller": "liam.lens@example.com",
-    "Creation Date": "May 5, 2025 10:03 pm"
+    "Creation Date": "May 5, 2025 10:03 pm",
+    "technical_specification": [
+      { "specName": "Sensor", "value": "1-inch CMOS (20.1MP effective)" },
+      { "specName": "Video", "value": "5.3K/30fps, 4K/60fps" },
+      { "specName": "Aperture", "value": "f/2.8-f/11 (adjustable ND filter)" },
+      { "specName": "Stabilization", "value": "3-axis mechanical (5-stop compensation)" },
+      { "specName": "ISO Range", "value": "100-25600 (expandable to 51200)" },
+      { "specName": "Weight", "value": "198 g (body only)" }
+    ]
   },
   {
     "id": "PR004",
@@ -37,7 +61,15 @@
     "name": "SteadyShoot Gimbal",
     "price": "149.99",
     "seller": "sammy.solar@example.com",
-    "Creation Date": "May 5, 2025 10:03 pm"
+    "Creation Date": "May 5, 2025 10:03 pm",
+    "technical_specification": [
+      { "specName": "Payload", "value": "3.2 kg (max camera weight)" },
+      { "specName": "Axes", "value": "3-axis brushless motors (±0.005° stability)" },
+      { "specName": "Battery", "value": "12-hour runtime (2600mAh built-in)" },
+      { "specName": "Control", "value": "Bluetooth 5.0 + manual joystick" },
+      { "specName": "Compatibility", "value": "DSLR/mirrorless cameras" },
+      { "specName": "App", "value": "AI tracking via smartphone" }
+    ]
   },
   {
     "id": "PR005",
@@ -47,7 +79,14 @@
     "name": "PropelGuard Spare Part",
     "price": "49.99",
     "seller": "norman.drone@example.com",
-    "Creation Date": "May 5, 2025 10:03 pm"
+    "Creation Date": "May 5, 2025 10:03 pm",
+    "technical_specification": [
+      { "specName": "Material", "value": "CNC-machined carbon fiber" },
+      { "specName": "Compatibility", "value": "SkyMaster drone rotor arms" },
+      { "specName": "Impact Resistance", "value": "15G acceleration tolerance" },
+      { "specName": "Weight", "value": "32 g per set (4 pieces)" },
+      { "specName": "Installation", "value": "Tool-free quick-release design" }
+    ]
   },
   {
     "id": "PR006",
@@ -57,7 +96,15 @@
     "name": "AirView Drone",
     "price": "1099.99",
     "seller": "testuser@example.com",
-    "Creation Date": "May 5, 2025 10:03 pm"
+    "Creation Date": "May 5, 2025 10:03 pm",
+    "technical_specification": [
+      { "specName": "Flight Time", "value": "42 minutes (intelligent battery)" },
+      { "specName": "Camera", "value": "6K/30fps, 1-inch 48MP sensor" },
+      { "specName": "Obstacle Sensing", "value": "Omnidirectional (8 sensors)" },
+      { "specName": "Max Altitude", "value": "6000 m (with barometer)" },
+      { "specName": "Wind Resistance", "value": "Level 7 (15 m/s)" },
+      { "specName": "RTK Positioning", "value": "Centimeter-level accuracy" }
+    ]
   },
   {
     "id": "PR007",
@@ -67,7 +114,14 @@
     "name": "EcoCharge Battery",
     "price": "89.99",
     "seller": "testuser@example.com",
-    "Creation Date": "May 5, 2025 10:04 pm"
+    "Creation Date": "May 5, 2025 10:04 pm",
+    "technical_specification": [
+      { "specName": "Capacity", "value": "4000 mAh (solar-assist charging)" },
+      { "specName": "Eco Feature", "value": "30% recycled materials" },
+      { "specName": "Charge Cycles", "value": "500+ (eco-mode optimization)" },
+      { "specName": "Output", "value": "USB-C PD 65W + 12V DC" },
+      { "specName": "Self-Discharge", "value": "<5% per month (storage mode)" }
+    ]
   },
   {
     "id": "PR008",
@@ -77,7 +131,14 @@
     "name": "PanoPro Camera",
     "price": "649.99",
     "seller": "testuser@example.com",
-    "Creation Date": "May 5, 2025 10:04 pm"
+    "Creation Date": "May 5, 2025 10:04 pm",
+    "technical_specification": [
+      { "specName": "Resolution", "value": "360° 8K video (dual 1/2.3-inch sensors)" },
+      { "specName": "Frame Rate", "value": "120fps at 4K" },
+      { "specName": "Waterproof", "value": "IP68 rating (10m depth)" },
+      { "specName": "Audio", "value": "4-mic spatial recording" },
+      { "specName": "Live Streaming", "value": "Dual-band Wi-Fi 6" }
+    ]
   },
   {
     "id": "PR009",
@@ -87,7 +148,14 @@
     "name": "SmoothMove Gimbal",
     "price": "129.99",
     "seller": "testuser@example.com",
-    "Creation Date": "May 5, 2025 10:04 pm"
+    "Creation Date": "May 5, 2025 10:04 pm",
+    "technical_specification": [
+      { "specName": "Payload", "value": "1.2 kg (action cameras/smartphones)" },
+      { "specName": "Foldable Design", "value": "180° compact rotation" },
+      { "specName": "Charging", "value": "USB-C (1.5-hour full charge)" },
+      { "specName": "Modes", "value": "Time-lapse, POV, vortex rotation" },
+      { "specName": "Load Time", "value": "<10s (auto-balance calibration)" }
+    ]
   },
   {
     "id": "PR010",
@@ -97,7 +165,14 @@
     "name": "SafeGear Spare Part",
     "price": "59.99",
     "seller": "testuser@example.com",
-    "Creation Date": "May 5, 2025 10:04 pm"
+    "Creation Date": "May 5, 2025 10:04 pm",
+    "technical_specification": [
+      { "specName": "Function", "value": "Motor replacement kit (4 motors)" },
+      { "specName": "KV Rating", "value": "1750KV (for 3S-4S batteries)" },
+      { "specName": "Bearings", "value": "Ceramic hybrid (50,000h lifespan)" },
+      { "specName": "Connectors", "value": "Gold-plated XT60 plugs" },
+      { "specName": "Wiring", "value": "18AWG silicone insulation" }
+    ]
   },
   {
     "id": "PR011",
@@ -107,7 +182,14 @@
     "name": "PrimeFocus Camera",
     "price": "719.99",
     "seller": "jack.reacher@example.com",
-    "Creation Date": "May 5, 2025 10:04 pm"
+    "Creation Date": "May 5, 2025 10:04 pm",
+    "technical_specification": [
+      { "specName": "Sensor", "value": "Full-frame BSI CMOS (45.7MP)" },
+      { "specName": "Dynamic Range", "value": "15 stops (16-bit RAW)" },
+      { "specName": "Autofocus", "value": "1053-point phase detection" },
+      { "specName": "Shutter", "value": "1/8000s mechanical + silent electronic" },
+      { "specName": "Video", "value": "8K/24fps ProRes RAW" }
+    ]
   },
   {
     "id": "PR012",
@@ -117,7 +199,13 @@
     "name": "SpeedySpare Battery",
     "price": "109.99",
     "seller": "jack.reacher@example.com",
-    "Creation Date": "May 5, 2025 10:04 pm"
+    "Creation Date": "May 5, 2025 10:04 pm",
+    "technical_specification": [
+      { "specName": "Fast Charge", "value": "70% in 15 minutes (QC 4.0+)" },
+      { "specName": "Capacity", "value": "5500 mAh (smart power allocation)" },
+      { "specName": "Safety", "value": "Dual-temperature sensors + flame retardant" },
+      { "specName": "Indicator", "value": "4-LED power level display" }
+    ]
   },
   {
     "id": "PR013",
@@ -127,6 +215,13 @@
     "name": "HighFly Drone",
     "price": "1349.99",
     "seller": "jack.reacher@example.com",
-    "Creation Date": "May 5, 2025 10:04 pm"
+    "Creation Date": "May 5, 2025 10:04 pm",
+    "technical_specification": [
+      { "specName": "Flight Time", "value": "50 minutes (hyper-efficient motors)" },
+      { "specName": "Payload", "value": "1.2 kg (interchangeable gimbal system)" },
+      { "specName": "Transmission", "value": "OcuSync Enterprise (15 km range)" },
+      { "specName": "AI Features", "value": "Automated inspection mapping" },
+      { "specName": "Certification", "value": "IP54 weather resistance" }
+    ]
   }
 ]

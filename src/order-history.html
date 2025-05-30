@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./global.css" />
+    <link rel="stylesheet" href="./order-history.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <title>Order History - Aviatron</title>
+  </head>
+  <body>
+    <nav class="desktop-nav">
+      <div class="brand-logo">
+        <div class="brand-logo-image">
+          <img src="" alt="" />
+        </div>
+        <h1>Aviatron</h1>
+      </div>
+
+      <div class="nav-container">
+        <div class="nav-link">
+          <a href="./index.html">Home</a>
+        </div>
+        <div class="nav-link">
+          <a href="./products.html">Product</a>
+        </div>
+        <div class="nav-link">
+          <a href="./faq.html">FAQ & Support</a>
+        </div>
+      </div>
+
+      <div class="user-actions">
+        <div class="user-action">
+          <a href="#">
+            <div class="cart-icon">
+              <span>Cart</span>
+              <span class="cart-count">0</span>
+            </div>
+          </a>
+        </div>
+        <div class="user-action">
+          <button>Log Out</button>
+        </div>
+      </div>
+    </nav>
+    <nav class="mobile-nav">
+      <div class="nav-container">
+        <div class="nav-link">
+          <a href="./index.html">Home</a>
+        </div>
+        <div class="nav-link">
+          <a href="./products.html">Product</a>
+        </div>
+        <div class="nav-link">
+          <a href="#">FAQ & Support</a>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <header>
+        <div class="header-content">
+          <h1>Order History</h1>
+          <p>View your past orders and their details.</p>
+        </div>
+      </header>
+      <section class="order-history">
+        <div class="order-list">
+          <div class="order-item">
+            <div class="order-details">
+              <h2>Order #12345</h2>
+              <p>Date: 2023-10-01</p>
+              <p>Status: Delivered</p>
+            </div>
+            <div class="order-products">
+              <ul>
+                <li>Drone Model A - $499.99</li>
+                <li>Battery Pack - $49.99</li>
+              </ul>
+            </div>
+            <div class="order-total">
+              <p>Total: $549.98</p>
+            </div>
+            <div class="order-actions">
+              <button class="reorder-button">Reorder</button>
+              <button class="details-button">View Details</button>
+            </div>
+          </div>
+          <div class="order-item">
+            <div class="order-details">
+              <h2>Order #12346</h2>
+              <p>Date: 2023-09-15</p>
+              <p>Status: Shipped</p>
+            </div>
+            <div class="order-products">
+              <ul>
+                <li>Drone Model B - $599.99</li>
+                <li>Camera Attachment - $199.99</li>
+              </ul>
+            </div>
+            <div class="order-total">
+              <p>Total: $799.98</p>
+            </div>
+            <div class="order-actions">
+              <button class="reorder-button">Reorder</button>
+              <button class="details-button">View Details</button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="no-orders" style="display: none">
+        <h2>No Orders Found</h2>
+        <p>You have not placed any orders yet.</p>
+        <button class="shop-now-button">Shop Now</button>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <div class="company-info">
+          <div class="company-info-content">
+            <div class="brand-logo">
+              <div class="brand-logo-image">
+                <img src="" alt="" />
+              </div>
+              <h2>Aviatron</h2>
+            </div>
+            <p>
+              The premier marketplace for drone technology. Buy, sell, and rent
+              the latest aerial equipment.
+            </p>
+            <div class="social-media">icons</div>
+          </div>
+        </div>
+        <div class="footer-links">
+          <div class="footer-link">
+            <h3>Company</h3>
+            <a href="#">About Us</a>
+            <a href="#">Careers</a>
+            <a href="#">Privacy Policy</a>
+          </div>
+          <div class="footer-link">
+            <h3>Support</h3>
+            <a href="./faq.html">Contact Us</a>
+            <a href="./faq.html">FAQ</a>
+            <a href="./terms.html">Terms & Conditions</a>
+          </div>
+          <div class="footer-link">
+            <h3>Account</h3>
+            <a href="./index.html">Dashboard</a>
+            <a href="#">Sell Product</a>
+            <a href="#">Order History</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2023 Aviatron. All rights reserved.</p>
+        <p>Designed for drone enthusiasts and professionals worldwide</p>
+      </div>
+    </footer>
+  </body>
+</html>
