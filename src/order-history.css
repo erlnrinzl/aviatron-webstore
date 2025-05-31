@@ -1,0 +1,335 @@
+/* orders_v2.css */
+
+/* Account Page Layout */
+.account-section {
+  padding: 2rem 0;
+}
+
+.account-content {
+  display: grid;
+  grid-template-columns: 1fr; /* Mobile first */
+  gap: 1.5rem; /* Consistent with Project B global card gaps */
+  max-width: 1280px; /* Max container width */
+  margin: 0 auto; /* Center the content grid */
+  padding: 0 1rem; /* Add padding for smaller screens to prevent touching edges */
+}
+
+/* Sidebar Styling */
+.account-sidebar.card {
+  /* .card styles are applied from global.css (bg: white, border-radius: 10px, padding: 1.5rem, shadow) */
+}
+
+.account-info {
+  display: flex;
+  align-items: center;
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #eeeeee; /* Lighter border */
+}
+
+.account-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 1rem;
+  flex-shrink: 0;
+}
+
+.account-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.account-details h3 {
+  margin: 0 0 0.25rem 0;
+  font-size: 1.25rem; /* Adjusted size */
+  color: #33424ff8; /* From Project B global.css */
+  font-weight: bold;
+}
+
+.account-details p {
+  color: #5f636a; /* From Project B global.css */
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.account-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.account-nav li:not(:last-child) {
+  margin-bottom: 0.5rem;
+}
+
+.account-nav a {
+  display: block; /* Simpler for text-only links */
+  padding: 0.75rem 1rem;
+  color: #33424ff8; /* Project B nav link color */
+  border-radius: 5px; /* Project B nav link radius */
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  font-weight: 500; /* Slightly bolder than normal text */
+}
+
+.account-nav a:hover {
+  background-color: #f0f0f0; /* Lighter hover */
+  color: #1773cf; /* Project B hover color */
+}
+
+.account-nav a.active {
+  background-color: #1773cf; /* Project B primary color */
+  color: white;
+  font-weight: bold;
+}
+
+/* Main Account Content Styling */
+.account-main.card {
+  /* .card styles are applied from global.css */
+}
+
+.page-header {
+  display: flex;
+  flex-direction: column; /* Stack on mobile */
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.page-header h1 {
+  margin: 0 0 1rem 0; /* Space below for mobile */
+  font-size: 1.8rem;
+  color: #33424ff8;
+  font-weight: bold;
+}
+
+.header-actions {
+  display: flex;
+  flex-direction: column; /* Stack on mobile */
+  gap: 1rem;
+  width: 100%;
+}
+
+.search-orders input,
+.filter-orders select {
+  padding: 0.65rem 1rem; /* Slightly adjusted padding */
+  border-radius: 5px;
+  border: 1px solid #cccccc;
+  width: 100%;
+  font-size: 0.95rem;
+  background-color: #fff;
+  color: #33424ff8;
+}
+
+.search-orders input::placeholder {
+  color: #777777;
+}
+
+.search-orders input:focus,
+.filter-orders select:focus {
+  outline: none;
+  border-color: #1773cf; /* Project B primary color */
+  box-shadow: 0 0 0 3px rgba(23, 115, 207, 0.15); /* Softer focus shadow */
+}
+
+/* Orders Table */
+.orders-table-container {
+  width: 100%;
+  overflow-x: auto; /* Enable horizontal scroll on small screens */
+}
+
+.orders-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  color: #33424ff8;
+}
+
+.orders-table th,
+.orders-table td {
+  padding: 0.85rem 1rem; /* Increased padding for readability */
+  text-align: left;
+  border-bottom: 1px solid #dddddd; /* Slightly darker border for table */
+  white-space: nowrap;
+}
+
+.orders-table th {
+  background-color: #f8f9fa; /* Standard light grey header */
+  font-weight: bold;
+  color: #33424ff8;
+}
+
+.orders-table tbody tr:hover {
+  background-color: #f5f5f5; /* Hover effect for rows */
+}
+
+.status {
+  display: inline-block;
+  padding: 0.3rem 0.8rem; /* Adjusted padding */
+  border-radius: 15px; /* Pill shape */
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-transform: capitalize;
+  line-height: 1.2;
+}
+
+.status.processing {
+  background-color: #ffc107; /* Bootstrap warning yellow */
+  color: #212529; /* Dark text for contrast */
+}
+.status.shipped {
+  background-color: #17a2b8; /* Bootstrap info blue */
+  color: white;
+}
+.status.delivered {
+  background-color: #28a745; /* Bootstrap success green */
+  color: white;
+}
+.status.cancelled {
+  background-color: #dc3545; /* Bootstrap danger red */
+  color: white;
+}
+
+.order-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+.order-actions .btn {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.85rem;
+  min-width: 70px; /* Ensure buttons have some minimum width */
+  text-align: center;
+}
+/* Ensure .btn-primary and .btn-secondary from global.css are used correctly */
+/* .btn-primary already defined in global.css */
+/* .btn.secondary already defined in global.css (for pagination) */
+/* For a specific "Track" button that might not be .btn.secondary: */
+.order-actions .track-btn {
+    background-color: #6c757d; /* A neutral grey */
+    color: white;
+}
+.order-actions .track-btn:hover {
+    background-color: #5a6268;
+}
+
+
+/* Pagination */
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #eeeeee;
+  gap: 0.75rem; /* Increased gap */
+}
+
+.page-numbers {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* Using .btn class for pagination buttons for consistency */
+.pagination .btn,
+.page-numbers .btn {
+  font-weight: 500; /* Standard weight for pagination buttons */
+  min-width: 38px; /* Ensure even rounder buttons */
+  padding: 0.5rem 0.75rem;
+}
+
+.page-numbers .btn.active {
+  /* .btn-primary style from global.css */
+  background-color: #1773cf;
+  color: white;
+  font-weight: bold;
+}
+.page-numbers .btn:not(.active):hover {
+  background-color: #e0e0e0; /* Hover for non-active page numbers */
+}
+
+
+/* Responsive Adjustments */
+@media (min-width: 768px) {
+  .account-content {
+    grid-template-columns: 280px 1fr; /* Sidebar and main content */
+    padding: 0; /* Remove side padding on larger screens as main has margin */
+  }
+  .page-header {
+    flex-direction: row;
+    align-items: center;
+  }
+  .page-header h1 {
+    margin-bottom: 0;
+  }
+  .header-actions {
+    flex-direction: row;
+    width: auto;
+  }
+  .search-orders input {
+    width: auto; /* Allow natural sizing */
+    min-width: 220px;
+  }
+  .filter-orders select {
+     width: auto; /* Allow natural sizing */
+    min-width: 180px;
+  }
+}
+
+@media (min-width: 1024px) {
+    .account-content {
+        gap: 2rem; /* Wider gap on larger screens */
+    }
+    .account-sidebar.card, .account-main.card {
+        padding: 2rem; /* More padding inside cards on large screens */
+    }
+}
+
+/* Active link in main navigation */
+nav.desktop-nav .nav-container .nav-link a.active {
+    color: #1773cf; /* Project B primary color */
+    font-weight: bold; /* From global.css nav a:hover */
+    /* text-decoration: underline; Optional */
+}
+nav.mobile-nav .nav-container .nav-link a.active {
+    color: #1773cf;
+    font-weight: bold;
+    background-color: #f0f0f0; /* Slight background for active on mobile */
+}
+
+
+/* Logout Buttons */
+#logout-btn-main,
+#logout-link-sidebar {
+    cursor: pointer;
+}
+
+/* For the sidebar logout, to make it visually distinct on hover if needed */
+#logout-link-sidebar:hover {
+    background-color: rgb(222, 81, 73) !important; /* Project B logout color */
+    color: white !important;
+}
+/* #logout-btn-main is styled by .user-actions button from global.css */
+#logout-btn-main:hover {
+    background-color: rgb(200, 70, 60); /* Darker shade on hover */
+}
+
+/* Placeholder logo image style */
+.brand-logo-image img {
+    width: 2rem; /* From global.css */
+    height: 2rem; /* From global.css */
+    background-color: #ccc; /* Placeholder background */
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    color: #fff;
+}
+.brand-logo-image img::after {
+    content: "Logo"; /* If image fails to load */
+}
