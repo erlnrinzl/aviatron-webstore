@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./products.css" />
+    <title>Edit Product - Aviatron</title>
+    <style></style>
+  </head>
+  <body>
+    <nav class="desktop-nav">
+      <div class="brand-logo">
+        <div class="brand-logo-image">
+          <img src="" alt="" />
+        </div>
+        <h1>Aviatron</h1>
+      </div>
+
+      <div class="nav-container">
+        <div class="nav-link">
+          <a href="#">Home</a>
+        </div>
+        <div class="nav-link">
+          <a href="#">Product</a>
+        </div>
+        <div class="nav-link">
+          <a href="./faq.html">FAQ & Support</a>
+        </div>
+      </div>
+
+      <div class="user-actions">
+        <div class="user-action">
+          <a href="#">Cart</a>
+        </div>
+        <div class="user-action">
+          <a href="/logout"><button>Log Out</button></a>
+        </div>
+      </div>
+    </nav>
+    <nav class="mobile-nav">
+      <div class="nav-container">
+        <div class="nav-link">
+          <a href="#">Home</a>
+        </div>
+        <div class="nav-link">
+          <a href="#">Product</a>
+        </div>
+        <div class="nav-link">
+          <a href="#">FAQ & Support</a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="edit-wrapper">
+      <div class="edit-left">
+        <h2>Edit Product</h2>
+        <form class="edit-form">
+          <label for="productName">Product Name</label>
+          <input
+            type="text"
+            id="productName"
+            placeholder="Example: Aviatron Pro Drone"
+          />
+
+          <label for="price">Price</label>
+          <input type="number" id="price" placeholder="$99.99" />
+
+          <label for="description">Description</label>
+          <textarea
+            id="description"
+            rows="4"
+            placeholder="Describe the product here..."
+          ></textarea>
+
+          <label for="image">Image URL</label>
+          <input type="text" id="image" placeholder="https://..." />
+
+          <button type="submit">Save Changes</button>
+        </form>
+      </div>
+      <div class="edit-right">
+        <div class="edit-image-preview">
+          <img src="assets/images/dummy-image.jpg" alt="Preview" />
+        </div>
+        <div class="edit-thumbs">
+          <img src="assets/images/dummy-image.jpg" alt="thumb1" />
+          <img src="assets/images/dummy-image.jpg" alt="thumb2" />
+          <img src="assets/images/dummy-image.jpg" alt="thumb3" />
+          <img src="assets/images/dummy-image.jpg" alt="thumb4" />
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <div class="company-info">
+          <div class="company-info-content">
+            <div class="brand-logo">
+              <div class="brand-logo-image">
+                <img src="" alt="" />
+              </div>
+              <h2>Aviatron</h2>
+            </div>
+            <p>
+              The premier marketplace for drone technology. Buy, sell, and rent
+              the latest aerial equipment.
+            </p>
+            <div class="social-media">icons</div>
+          </div>
+        </div>
+        <div class="footer-links">
+          <div class="footer-link">
+            <h3>Company</h3>
+            <a href="#">About Us</a>
+            <a href="#">Careers</a>
+            <a href="#">Privacy Policy</a>
+          </div>
+          <div class="footer-link">
+            <h3>Support</h3>
+            <a href="#">Contact Us</a>
+            <a href="#">FAQ</a>
+            <a href="#">Shipping & Returns</a>
+          </div>
+          <div class="footer-link">
+            <h3>Account</h3>
+            <a href="#">Dashboard</a>
+            <a href="#">Sell Product</a>
+            <a href="#">Order History</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2023 Aviatron. All rights reserved.</p>
+        <p>Designed for drone enthusiasts and professionals worldwide</p>
+      </div>
+    </footer>
+  </body>
+</html>
