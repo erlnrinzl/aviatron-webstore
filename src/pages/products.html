@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/global.css" />
+    <link rel="stylesheet" href="../styles/product.css" />
+    <title>Aviatron - Product</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <nav class="desktop-nav">
+      <div class="brand-logo">
+        <div class="brand-logo-image">
+          <img src="../assets/images/aviatron-logo.jpeg" alt="" />
+        </div>
+        <h1>Aviatron</h1>
+      </div>
+
+      <div class="nav-container">
+        <div class="nav-link">
+          <a href="./index.html">Home</a>
+        </div>
+        <div class="nav-link">
+          <a href="./products.html">Product</a>
+        </div>
+        <div class="nav-link">
+          <a href="./faq.html">FAQ & Support</a>
+        </div>
+      </div>
+
+      <div class="user-actions">
+        <div class="user-action">
+          <a href="#">
+            <div class="cart-icon">
+              <span>Cart</span>
+              <span class="cart-count">0</span>
+            </div>
+          </a>
+        </div>
+        <div class="user-action">
+          <a href="login.html" class="auth-button">Login</a>
+        </div>
+      </div>
+    </nav>
+    <nav class="mobile-nav">
+      <div class="nav-container">
+        <div class="nav-link">
+          <a href="./index.html">Home</a>
+        </div>
+        <div class="nav-link">
+          <a href="./products.html">Product</a>
+        </div>
+        <div class="nav-link">
+          <a href="#">FAQ & Support</a>
+        </div>
+      </div>
+    </nav>
+    <main>
+      <header>
+        <div class="header-content">
+          <h1>Explore Drone Technology</h1>
+          <div class="header-description">
+            <p>
+              Discover the latest drones and accessories from top manufacturers
+              and independent sellers.
+            </p>
+          </div>
+        </div>
+        <section class="filter-control">
+          <div class="card horizontal">
+            <div class="category-filter">
+              <span class="category-filter-label">Filter by Category </span>
+              <select class="dropdown dropdown-chevron" id="category-select">
+                <option class="dropdown-choice dropdown-placeholder" value="">
+                  All Categories
+                </option>
+                <option class="dropdown-choice" value="Drones">Drones</option>
+                <option class="dropdown-choice" value="Batteries">
+                  Batteries
+                </option>
+                <option class="dropdown-choice" value="Cameras">Cameras</option>
+                <option class="dropdown-choice" value="Gimbals">Gimbals</option>
+                <option class="dropdown-choice" value="Spare Parts">
+                  Spare Parts
+                </option>
+              </select>
+            </div>
+            <div class="card-action">
+              <button id="apply-filter-btn">
+                <span>Apply Filter</span>
+              </button>
+            </div>
+          </div>
+        </section>
+      </header>
+      <section class="product-section">
+        <div class="product-section-header">
+          <div class="product-section-title">
+            <h2>Available Products</h2>
+          </div>
+          <div class="product-section-count">
+            <span>Showing all products</span>
+          </div>
+        </div>
+        <div class="product-grid">
+          <!-- product cards -->
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <div class="company-info">
+          <div class="company-info-content">
+            <div class="brand-logo">
+              <div class="brand-logo-image">
+                <img src="../assets/images/aviatron-logo.jpeg" alt="" />
+              </div>
+              <h2>Aviatron</h2>
+            </div>
+            <p>
+              The premier marketplace for drone technology. Buy, sell, and rent
+              the latest aerial equipment.
+            </p>
+            <div class="social-media">icons</div>
+          </div>
+        </div>
+        <div class="footer-links">
+          <div class="footer-link">
+            <h3>Company</h3>
+            <a href="#">About Us</a>
+            <a href="#">Careers</a>
+            <a href="#">Privacy Policy</a>
+          </div>
+          <div class="footer-link">
+            <h3>Support</h3>
+            <a href="./faq.html">Contact Us</a>
+            <a href="./faq.html">FAQ</a>
+            <a href="./terms.html">Terms & Conditions</a>
+          </div>
+          <div class="footer-link">
+            <h3>Account</h3>
+            <a href="./dashboard.html">Dashboard</a>
+            <a href="#">Sell Product</a>
+            <a href="./dashboard.html">Order History</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2023 Aviatron. All rights reserved.</p>
+        <p>Designed for drone enthusiasts and professionals worldwide</p>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/auth.js" type="module"></script>
+    <script type="module" src="../js/product.js"></script>
+  </body>
+</html> 
