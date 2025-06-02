@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Admin Account</title>
+    <script>
+        function createAdmin() {
+            const users = JSON.parse(localStorage.getItem('users') || '[]');
+            
+            // Remove any existing admin account
+            const filteredUsers = users.filter(user => user.role !== 'admin');
+            
+            // Create new admin user
+            const adminUser = {
+                name: 'Admin User',
+                email: 'admin@aviatron.com',
+                password: 'admin123',
+                role: 'admin',
+                phone: '+1234567890',
+                address: 'Admin Office'
+            };
+            
+            // Add admin to users array
+            filteredUsers.push(adminUser);
+            
+            // Save to localStorage
+            localStorage.setItem('users', JSON.stringify(filteredUsers));
+            
+            // Show current users
+            console.log('Users after admin creation:', JSON.parse(localStorage.getItem('users')));
+            
+            document.getElementById('result').textContent = 'Admin account created successfully! You can now close this page and login with admin@aviatron.com / admin123';
+        }
+    </script>
+</head>
+<body>
+    <h1>Create Admin Account</h1>
+    <button onclick="createAdmin()">Create Admin Account</button>
+    <p id="result"></p>
+    
+    <script>
+        // Auto-create admin on page load
+        createAdmin();
+    </script>
+</body>
+</html> 

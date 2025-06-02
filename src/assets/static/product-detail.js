@@ -1,4 +1,4 @@
-import { addToCart } from "./cartDA.js";
+import { addToCart, getCart, updateNavCartCount } from "../../cart.js";
 
 $(document).ready(function() {
   const urlParams = new URLSearchParams(window.location.search);
@@ -6,7 +6,6 @@ $(document).ready(function() {
   
   function initProductDetail() {
     loadProductData();
-    
     // setupEventListeners();
   }
 
@@ -42,8 +41,8 @@ $(document).ready(function() {
           const productName = $('.product-title').text();
           const productPrice = $('.price-value').text();
           addToCart(product);
+          updateNavCartCount(); // Call imported function
           
-          // Simulate adding to cart
           Swal.fire({
             title: 'Success!',
             text: `${productName} has been added to your cart for ${productPrice}`,
@@ -75,4 +74,5 @@ $(document).ready(function() {
 
   // Call the initialization function
   initProductDetail();
+  updateNavCartCount(); // Call imported function on initial load
 });
