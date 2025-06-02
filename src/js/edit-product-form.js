@@ -22,7 +22,7 @@ const saveLocalProducts = (data) =>
 
 const loadAllProducts = async () => {
   try {
-    const res = await fetch("assets/static/products.json");
+    const res = await fetch("../data/products.json");
     const json = await res.json();
     const local = getLocalProducts();
     const combined = [...json];
@@ -46,7 +46,7 @@ const populateForm = (product) => {
   form.category.value = product.category;
   previewImg.src = product.image?.startsWith("data:image")
     ? product.image
-    : `assets/images/${product.image}.jpg`;
+    : `../assets/images/${product.image}.jpg`;
 };
 
 imageFileInput.addEventListener("change", () => {
