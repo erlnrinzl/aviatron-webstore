@@ -1,0 +1,8 @@
+{
+  "public": "src",
+  "routes": [
+    { "src": "/", "dest": "pages/index.html" },
+    { "src": "/style/(.*)", "dest": "style/$1" },
+    { "src": "/pages/(.*)", "dest": "pages/$1" }
+  ]
+}
