@@ -1,3 +1,5 @@
+import { getCart } from '../../cart.js'; // Updated import path
+
 // Authentication utility functions
 
 // Check if user is logged in
@@ -48,17 +50,38 @@ function updateUserActions() {
     const userActionsDiv = document.querySelector('.user-actions');
     if (!userActionsDiv) return;
 
-    if (isLoggedIn()) {
-        const user = getCurrentUser();
-        userActionsDiv.innerHTML = `
+    const cart = getCart();
+    const totalItems = cart.reduce((acc, item) => acc + item.quantity, 0);
+
+    const currentPagePath = window.location.pathname;
+    // Normalize paths: ensure leading slash and remove trailing if any for comparison
+    const normalizedCurrentPath = currentPagePath.startsWith('/') ? currentPagePath : '/' + currentPagePath;
+    
+    // Define allowed paths (ensure these are exactly how they appear or use a flexible check)
+    const cartVisiblePaths = ['/products.html', '/product-detail.html', '/cart.html'];
+    
+    // A more robust check: see if the current path *ends with* an allowed path.
+    // This handles cases where the full path might have other segments (e.g. /src/products.html if running locally from a subfolder)
+    const shouldShowCartIcon = cartVisiblePaths.some(allowedPath => normalizedCurrentPath.endsWith(allowedPath));
+
+    let cartIconHTML = '';
+    if (shouldShowCartIcon) {
+        cartIconHTML = `
             <div class="user-action">
-                <a href="#">
+                <a href="./cart.html">
                     <div class="cart-icon">
                         <span>Cart</span>
-                        <span class="cart-count">0</span>
+                        <span class="cart-count ${totalItems > 0 ? 'active' : 'hidden'}">${totalItems}</span>
                     </div>
                 </a>
             </div>
+        `;
+    }
+
+    if (isLoggedIn()) {
+        const user = getCurrentUser();
+        userActionsDiv.innerHTML = `
+            ${cartIconHTML}
             <div class="user-action profile-action">
                 <div class="profile-info">
                     <img src="https://ui-avatars.com/api/?name=${encodeURIComponent(user.name)}&background=0D8ABC&color=fff" alt="Profile" class="profile-image">
@@ -72,14 +95,7 @@ function updateUserActions() {
         `;
     } else {
         userActionsDiv.innerHTML = `
-            <div class="user-action">
-                <a href="#">
-                    <div class="cart-icon">
-                        <span>Cart</span>
-                        <span class="cart-count">0</span>
-                    </div>
-                </a>
-            </div>
+            ${cartIconHTML}
             <div class="user-action">
                 <a href="login.html" class="auth-button">Login</a>
             </div>
@@ -216,4 +232,6 @@ $(document).ready(function() {
 });
 
 // Call updateUserActions when the page loads
-document.addEventListener('DOMContentLoaded', updateUserActions); 
+document.addEventListener('DOMContentLoaded', () => { // Ensure DOM is ready for getCart
+    updateUserActions();
+}); 

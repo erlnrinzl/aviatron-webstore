@@ -1,12 +1,12 @@
 /* Auth Styles */
-nav {
+/* nav {
     justify-content: flex-start;
     gap: 2rem;
-}
+} */
 
-.user-actions {
+/* .user-actions {
     display: none;
-}
+} */
 
 .auth-button {
     background-color: rgb(23, 115, 207);

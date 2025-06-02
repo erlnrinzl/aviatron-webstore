@@ -1,4 +1,4 @@
-import { addToCart, getCart } from './cartDA.js';
+import { addToCart, getCart, updateNavCartCount } from '../../cart.js';
 let products = [];
 
 const fetchProducts = async () => {
@@ -11,16 +11,7 @@ const fetchProducts = async () => {
   renderProducts(products);
 }
 
-const updateCartCount = () => {
-  const cartCount = document.querySelector('.cart-count');
-  const cart = getCart();
-  const totalItems = cart.reduce((acc, item) => acc + item.quantity, 0);
-  cartCount.innerText = totalItems;
-  cartCount.classList.add('active');
-  cartCount.classList.remove('hidden');
-}
-
-updateCartCount();
+updateNavCartCount();
 
 fetchProducts().catch((error) => {
     console.error('Error fetching products:', error);
@@ -115,7 +106,7 @@ const renderProducts = (products) => {
         timerProgressBar: true
       });
 
-      updateCartCount();
+      updateNavCartCount();
     });
   });
 
