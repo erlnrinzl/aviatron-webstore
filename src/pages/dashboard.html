@@ -1,103 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>User Dashboard - Aviatron</title>
-    <link rel="stylesheet" href="../styles/dashboard.css">
+    <link rel="stylesheet" href="../styles/dashboard.css" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+  </head>
+  <body>
     <div class="dashboard-container">
-        <nav class="sidebar">
-            <div class="sidebar-header">
-                <img src="" alt="User Avatar" id="userAvatar" class="avatar">
-                <div class="user-info">
-                    <h3 id="userName">Loading...</h3>
-                    <span id="userRole" class="role-badge">Loading...</span>
-                </div>
+      <nav class="sidebar">
+        <div class="sidebar-header">
+          <img src="" alt="User Avatar" id="userAvatar" class="avatar" />
+          <div class="user-info">
+            <h3 id="userName">Loading...</h3>
+            <span id="userRole" class="role-badge">Loading...</span>
+          </div>
+        </div>
+        <ul class="nav-links">
+          <li class="active">
+            <a href="#"><i class="fas fa-user"></i> Profile</a>
+          </li>
+          <li>
+            <a href="#"><i class="fas fa-shopping-bag"></i> Order History</a>
+          </li>
+          <li class="logout">
+            <a href="#" onclick="logout()"
+              ><i class="fas fa-sign-out-alt"></i> Logout</a
+            >
+          </li>
+        </ul>
+      </nav>
+
+      <main class="main-content">
+        <header class="dashboard-header">
+          <h1>Dashboard</h1>
+        </header>
+
+        <section id="profile-section" class="card">
+          <h2>Profile Information</h2>
+          <div id="accountDetails">
+            <p>Loading account details...</p>
+          </div>
+        </section>
+
+        <section id="order-history-section" class="card">
+          <div class="page-header">
+            <h1>Order History</h1>
+            <div class="header-actions">
+              <div class="search-orders">
+                <input
+                  type="text"
+                  id="search-orders-input"
+                  placeholder="Search orders by ID..."
+                />
+              </div>
+              <div class="filter-orders">
+                <select id="filter-orders-select">
+                  <option value="">All Orders</option>
+                  <option value="processing">Processing</option>
+                  <option value="shipped">Shipped</option>
+                  <option value="delivered">Delivered</option>
+                  <option value="cancelled">Cancelled</option>
+                </select>
+              </div>
             </div>
-            <ul class="nav-links">
-                <li class="active"><a href="#"><i class="fas fa-user"></i> Profile</a></li>
-                <li><a href="#"><i class="fas fa-shopping-bag"></i> Order History</a></li>
-                <li class="logout"><a href="#" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
-            </ul>
-        </nav>
-        
-        <main class="main-content">
-            <header class="dashboard-header">
-                <h1>Dashboard</h1>
-            </header>
+          </div>
 
-            <section id="profile-section" class="card">
-                <h2>Profile Information</h2>
-                <div id="accountDetails">
-                    <p>Loading account details...</p>
-                </div>
-            </section>
+          <div class="orders-table-container">
+            <table class="orders-table">
+              <thead>
+                <tr>
+                  <th>Order ID</th>
+                  <th>Date</th>
+                  <th>Status</th>
+                  <th>Total</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="orders-table-body"></tbody>
+            </table>
+            <p
+              id="no-orders-message"
+              style="display: none; text-align: center; padding: 2rem"
+            >
+              No orders found.
+            </p>
+          </div>
 
-            <section id="order-history-section" class="card">
-                <div class="page-header">
-                    <h1>Order History</h1>
-                    <div class="header-actions">
-                        <div class="search-orders">
-                            <input
-                                type="text"
-                                id="search-orders-input"
-                                placeholder="Search orders by ID..."
-                            />
-                        </div>
-                        <div class="filter-orders">
-                            <select id="filter-orders-select">
-                                <option value="">All Orders</option>
-                                <option value="processing">Processing</option>
-                                <option value="shipped">Shipped</option>
-                                <option value="delivered">Delivered</option>
-                                <option value="cancelled">Cancelled</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="orders-table-container">
-                    <table class="orders-table">
-                        <thead>
-                            <tr>
-                                <th>Order ID</th>
-                                <th>Date</th>
-                                <th>Status</th>
-                                <th>Total</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody id="orders-table-body"></tbody>
-                    </table>
-                    <p
-                        id="no-orders-message"
-                        style="display: none; text-align: center; padding: 2rem"
-                    >
-                        No orders found.
-                    </p>
-                </div>
-
-                <div class="pagination">
-                    <button
-                        class="btn btn-secondary prev-page"
-                        id="prev-page-btn"
-                        disabled
-                    >
-                        Previous
-                    </button>
-                    <div class="page-numbers" id="page-numbers-container"></div>
-                    <button class="btn btn-secondary next-page" id="next-page-btn">
-                        Next
-                    </button>
-                </div>
-            </section>
-        </main>
+          <div class="pagination">
+            <button
+              class="btn btn-secondary prev-page"
+              id="prev-page-btn"
+              disabled
+            >
+              Previous
+            </button>
+            <div class="page-numbers" id="page-numbers-container"></div>
+            <button class="btn btn-secondary next-page" id="next-page-btn">
+              Next
+            </button>
+          </div>
+        </section>
+      </main>
     </div>
     <script src="../js/auth.js" type="module"></script>
     <script src="../js/dashboard.js" type="module"></script>
-</body>
-</html> 
+  </body>
+</html>

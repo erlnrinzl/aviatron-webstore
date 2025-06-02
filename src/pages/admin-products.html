@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin - Product Management</title>
+    <script></script>
+
+    <link rel="stylesheet" href="../styles/global.css" />
+    <link rel="stylesheet" href="../styles/product.css" />
+    <link rel="stylesheet" href="../styles/product-form.css" />
+  </head>
+  <body>
+    <!-- NAVIGATION -->
+    <nav class="desktop-nav">
+      <div class="brand-logo">
+        <div class="brand-logo-image">
+          <img src="./assets/images/aviatron-logo.jpeg" alt="Aviatron Logo" />
+        </div>
+        <h1>Aviatron</h1>
+      </div>
+      <div class="nav-container">
+        <div class="nav-link"><a href="./index.html">Home</a></div>
+        <div class="nav-link">
+          <a href="./admin-products.html">Product Admin</a>
+        </div>
+        <div class="nav-link">
+          <a href="#" onclick="logout()"
+            ><i class="fas fa-sign-out-alt"></i> Logout</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- ADMIN TOOLBAR -->
+    <div class="admin-toolbar">
+      <h2>Product Management</h2>
+      <a href="add-product.html" class="btn-add-product">+ Add Product</a>
+    </div>
+
+    <!-- PRODUCT LIST -->
+    <div class="product-list" id="product-list"></div>
+
+    <script></script>
+    <script type="module" src="../js/product-form.js"></script>
+    <script src="../js/auth.js" type="module"></script>
+  </body>
+</html>
