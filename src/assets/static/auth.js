@@ -234,4 +234,6 @@ $(document).ready(function() {
 // Call updateUserActions when the page loads
 document.addEventListener('DOMContentLoaded', () => { // Ensure DOM is ready for getCart
     updateUserActions();
-}); 
+});
+
+export { isLoggedIn, getCurrentUser, logout, hasRole, requireAuth, requireRole, updateUserActions }; 

@@ -123,11 +123,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Clear cart
         localStorage.removeItem('cart');
-        cart = [];
-
+        // updateCartCount(); // This function might not be defined here, ensure it's available globally or passed correctly if it's from another script.
+        // For now, assuming cart count update is handled elsewhere or by page reload.
         alert(`Pembayaran dengan ${selectedPaymentMethod} berhasil! Pesanan Anda sedang diproses.\nTerima kasih telah berbelanja di Aviatron!`);
         paymentModal.style.display = 'none';
-        window.location.href = 'order-history.html'; // Redirect to order history or a thank you page
+        window.location.href = 'dashboard.html'; // Redirect to dashboard (order history)
     });
 
     // Initial render
