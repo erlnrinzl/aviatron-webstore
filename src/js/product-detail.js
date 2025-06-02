@@ -1,9 +1,9 @@
 import { addToCart, getCart, updateNavCartCount } from "./cart.js";
 
-$(document).ready(function() {
+$(document).ready(function () {
   const urlParams = new URLSearchParams(window.location.search);
-  const targetId = urlParams.get('id') ?? "PR001";
-  
+  const targetId = urlParams.get("id") ?? "PR001";
+
   function initProductDetail() {
     loadProductData();
     // setupEventListeners();
@@ -11,47 +11,46 @@ $(document).ready(function() {
 
   function loadProductData() {
     $.ajax({
-      url: "../data/products.json",
+      url: "/data/products.json",
       method: "GET",
       dataType: "json",
       success: function (response) {
-        const product = response.find(product => product.id === targetId);
+        const product = response.find((product) => product.id === targetId);
 
-        if (!product) { 
+        if (!product) {
           console.error("Product not found");
           return;
         }
 
         // Populate product details
-        $('.product-title').text(product.name);
-        $('.price-value').text(`Rp${product.price}`);
-        $('.product-description').text(product.description);
-        $('#mainImage').attr('src', '../assets/images/' + product.image + '.jpg');
-        $('.product-category').text(product.category);
+        $(".product-title").text(product.name);
+        $(".price-value").text(`Rp${product.price}`);
+        $(".product-description").text(product.description);
+        $("#mainImage").attr("src", "/assets/images/" + product.image + ".jpg");
+        $(".product-category").text(product.category);
 
-        $('.specs-table').empty();
-        product.technical_specification.forEach(spec => {
-          const specRow = $('<tr></tr>');
+        $(".specs-table").empty();
+        product.technical_specification.forEach((spec) => {
+          const specRow = $("<tr></tr>");
           specRow.append(`<td>${spec.specName}</td>`);
           specRow.append(`<td>${spec.value}</td>`);
-          $('.specs-table').append(specRow);
+          $(".specs-table").append(specRow);
         });
 
-        $('#addToCart').on('click', function() {
-          const productName = $('.product-title').text();
-          const productPrice = $('.price-value').text();
+        $("#addToCart").on("click", function () {
+          const productName = $(".product-title").text();
+          const productPrice = $(".price-value").text();
           addToCart(product);
           updateNavCartCount(); // Call imported function
-          
+
           Swal.fire({
-            title: 'Success!',
+            title: "Success!",
             text: `${productName} has been added to your cart for ${productPrice}`,
-            icon: 'success',
-            confirmButtonText: 'OK'
+            icon: "success",
+            confirmButtonText: "OK",
           });
         });
-        
-      }
+      },
     });
   }
 
@@ -75,4 +74,4 @@ $(document).ready(function() {
   // Call the initialization function
   initProductDetail();
   updateNavCartCount(); // Call imported function on initial load
-}); 
+});

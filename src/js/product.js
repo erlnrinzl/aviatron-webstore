@@ -1,49 +1,50 @@
-import { addToCart, getCart, updateNavCartCount } from './cart.js';
+import { addToCart, getCart, updateNavCartCount } from "./cart.js";
 let products = [];
 
 const fetchProducts = async () => {
-  const response = await fetch('../data/products.json');
+  const response = await fetch("/data/products.json");
   if (!response.ok) {
-    throw new Error('Network response was not ok');
+    throw new Error("Network response was not ok");
   }
   const data = await response.json();
   products = data;
   renderProducts(products);
-}
+};
 
 updateNavCartCount();
 
 fetchProducts().catch((error) => {
-    console.error('Error fetching products:', error);
-  }
-);
+  console.error("Error fetching products:", error);
+});
 
 const currencyFormatter = (value) => {
-  return new Intl.NumberFormat('id-ID', {
-    style: 'currency',
-    currency: 'IDR',
+  return new Intl.NumberFormat("id-ID", {
+    style: "currency",
+    currency: "IDR",
   }).format(value);
 };
 
 const imageLinkProcessor = (imageLink) => {
   const decodedImagePath = imageLink;
   // const decodedImagePath = decodeURIComponent(imageLink);
-  return "../assets/images/" + decodedImagePath + ".jpg";
-}
+  return "/assets/images/" + decodedImagePath + ".jpg";
+};
 
 const filterProducts = (category) => {
   const filteredProducts = products.filter((product) => {
-    return product.category.trim().toLowerCase() === category.trim().toLowerCase();
+    return (
+      product.category.trim().toLowerCase() === category.trim().toLowerCase()
+    );
   });
   renderProducts(filteredProducts);
   return filteredProducts;
-}
+};
 
-const applyFilterBtn = document.querySelector('#apply-filter-btn');
-applyFilterBtn.addEventListener('click', () => {
-  const productCountEl = document.querySelector('.product-section-count');
-  
-  const selectedCategory = document.querySelector('#category-select').value;
+const applyFilterBtn = document.querySelector("#apply-filter-btn");
+applyFilterBtn.addEventListener("click", () => {
+  const productCountEl = document.querySelector(".product-section-count");
+
+  const selectedCategory = document.querySelector("#category-select").value;
   if (selectedCategory) {
     let filteredProducts = filterProducts(selectedCategory);
     productCountEl.innerHTML = `<span>${filteredProducts.length} Products Found</span>`;
@@ -54,12 +55,12 @@ applyFilterBtn.addEventListener('click', () => {
 });
 
 const renderProducts = (products) => {
-  const productGridEl = document.querySelector('.product-grid');
-  productGridEl.innerHTML = '';
+  const productGridEl = document.querySelector(".product-grid");
+  productGridEl.innerHTML = "";
   products.forEach((product) => {
-    const productCard = document.createElement('div');
-    productCard.classList.add('product');
-    productCard.classList.add('card');
+    const productCard = document.createElement("div");
+    productCard.classList.add("product");
+    productCard.classList.add("card");
     productCard.id = product.id;
     productCard.dataset.id = product.id;
     productCard.innerHTML = `
@@ -81,29 +82,31 @@ const renderProducts = (products) => {
         </div>
       </div>
       <div class="card-action">
-        <a href="./product-detail.html?id=${product.id}" class="view-details">View Details</a>
+        <a href="./product-detail.html?id=${
+          product.id
+        }" class="view-details">View Details</a>
         <button class="add-to-cart">Add to Cart</button>
       </div>
     `;
     productGridEl.appendChild(productCard);
   });
 
-  const addToCartButtons = document.querySelectorAll('.add-to-cart');
+  const addToCartButtons = document.querySelectorAll(".add-to-cart");
   addToCartButtons.forEach((button) => {
-    button.addEventListener('click', (event) => {
-      const productCard = event.target.closest('.product');
+    button.addEventListener("click", (event) => {
+      const productCard = event.target.closest(".product");
       const productId = productCard.dataset.id;
       const product = products.find((p) => p.id === productId);
       addToCart(product);
       Swal.fire({
-        title: 'Success!',
-        text: 'Successfully added to cart',
-        icon: 'success',
+        title: "Success!",
+        text: "Successfully added to cart",
+        icon: "success",
         toast: true,
-        position: 'bottom-end',
+        position: "bottom-end",
         showConfirmButton: false,
         timer: 1500,
-        timerProgressBar: true
+        timerProgressBar: true,
       });
 
       updateNavCartCount();
@@ -118,7 +121,7 @@ const renderProducts = (products) => {
   //     const product = products.find((p) => p.id === productId);
   //     // localStorage.setItem('selectedProduct', JSON.stringify(product));
   //     // window.location.href = './product-detail.html';
-  
+
   //     Swal.fire({
   //       title: `<strong>${product.name}</strong>`,
   //       width: '80%',
@@ -172,18 +175,18 @@ const renderProducts = (products) => {
   //             timer: 1500,
   //             timerProgressBar: true
   //           });
-  
+
   //           updateCartCount();
   //         });
   //       }
   //     });
   //   });
   // });
-}
+};
 
 // jQuery(document).ready(function($) {
 //   const targetPath = "/shop/"
-  
+
 //   if (!window.location.pathname.includes(targetPath)) {
 //     const categoryNavEl  = $('.header-category-nav.cat-menu-text-overflow');
 //     categoryNavEl.hide();
@@ -227,4 +230,4 @@ const renderProducts = (products) => {
 //     });
 
 //   }
-// }); 
+// });

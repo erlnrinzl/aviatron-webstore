@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../styles/global.css" />
-    <link rel="stylesheet" href="../styles/terms.css" />
-    <title>Terms & Policies - Aviatron</title>
+    <title>Aviatron - Detail Produk</title>
+    <link rel="stylesheet" href="/styles/global.css" />
+    <link rel="stylesheet" href="/styles/product-detail.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   </head>
   <body>
-    <!-- NAVIGATION -->
     <nav class="desktop-nav">
       <div class="brand-logo">
         <div class="brand-logo-image">
-          <img src="../assets/images/aviatron-logo.jpeg" alt="" />
+          <img src="/assets/images/aviatron-logo.jpeg" alt="" />
         </div>
         <h1>Aviatron</h1>
       </div>
@@ -39,7 +39,7 @@
           </a>
         </div>
         <div class="user-action">
-          <a href="login.html" class="auth-button">Login</a>
+          <button>Log Out</button>
         </div>
       </div>
     </nav>
@@ -52,64 +52,70 @@
           <a href="./products.html">Product</a>
         </div>
         <div class="nav-link">
-          <a href="./faq.html">FAQ & Support</a>
+          <a href="#">FAQ & Support</a>
         </div>
       </div>
     </nav>
 
-    <!-- HEADER -->
-    <header class="terms-header">
-      <h1>Terms & Policies</h1>
-      <p>
-        Understand our rules, commitments, and your responsibilities when using
-        Aviatron.
-      </p>
-    </header>
+    <main>
+      <div class="container">
+        <div class="product-detail">
+          <div class="product-gallery">
+            <img id="mainImage" src="" alt="Main Product" class="main-image" />
+            <!-- <div class="thumbnails">
+              <img
+                src=""
+                alt="Thumb 1"
+                class="thumbnail active"
+                data-full="https://via.placeholder.com/600x400?text=Gambar+1"
+              />
+            </div> -->
+          </div>
 
-    <!-- TERMS GRID -->
-    <section class="terms-grid">
-      <div class="terms-box box-1">
-        <h3>1. Terms of Use</h3>
-        <p>
-          By using Aviatron, you agree to our platform rules, including not
-          misusing the services or impersonating others. We reserve the right to
-          suspend accounts violating these terms.
-        </p>
-      </div>
-      <div class="terms-box box-2">
-        <h3>2. Privacy Policy</h3>
-        <p>
-          Your personal data is kept secure. We collect only what's necessary to
-          provide services and will never sell your information. You can request
-          data deletion at any time.
-        </p>
-      </div>
-      <div class="terms-box box-3">
-        <h3>3. User Responsibilities</h3>
-        <p>
-          You are responsible for the accuracy of listings, returning rental
-          items in proper condition, and maintaining your account security.
-          Abuse or fraudulent activity will not be tolerated.
-        </p>
-      </div>
-      <div class="terms-box box-4">
-        <h3>4. Return & Rental Policy</h3>
-        <p>
-          Returns are allowed within 14 days based on seller policy. Rentals
-          must be returned in original condition. Disputes will be handled
-          through our support process.
-        </p>
-      </div>
-    </section>
+          <div class="product-info">
+            <h1 class="product-title"></h1>
+            <span class="product-category">Drone Profesional</span>
 
-    <!-- FOOTER -->
+            <div class="price-section">
+              <div class="price-option">
+                <div class="option-label-container">
+                  <div class="option-label">Buy Now</div>
+                  <div class="price-value"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+              <button class="btn btn-cart" id="addToCart">Add to cart</button>
+              <button class="btn btn-wishlist" id="wishlist">Wishlist</button>
+            </div>
+
+            <!-- Specifications -->
+            <div class="specs-section">
+              <h2 class="section-title">Description</h2>
+              <p class="product-description"></p>
+            </div>
+
+            <!-- Specifications -->
+            <div class="specs-section">
+              <h2 class="section-title">Technical Specifications</h2>
+              <table class="specs-table">
+                <!-- specs here -->
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
     <footer>
       <div class="footer-content">
         <div class="company-info">
           <div class="company-info-content">
             <div class="brand-logo">
               <div class="brand-logo-image">
-                <img src="../assets/images/aviatron-logo.jpeg" alt="" />
+                <img src="/assets/images/aviatron-logo.jpeg" alt="" />
               </div>
               <h2>Aviatron</h2>
             </div>
@@ -133,7 +139,7 @@
             <a href="./faq.html">FAQ</a>
             <a href="./terms.html">Terms & Conditions</a>
           </div>
-          <div class="footer-link">
+          <div class="footer-link account">
             <h3>Account</h3>
             <a href="./index.html">Dashboard</a>
             <a href="#">Sell Product</a>
@@ -146,5 +152,9 @@
         <p>Designed for drone enthusiasts and professionals worldwide</p>
       </div>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="/js/auth.js" type="module"></script>
+    <script type="module" src="/js/product-detail.js"></script>
   </body>
 </html>

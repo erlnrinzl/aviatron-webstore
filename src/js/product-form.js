@@ -43,7 +43,7 @@ const renderProducts = (products) => {
 
       const imgSrc = product.image?.startsWith("data:image")
         ? product.image
-        : `../assets/images/${product.image}.jpg`;
+        : `/assets/images/${product.image}.jpg`;
 
       card.innerHTML = `
         <img src="${imgSrc}" alt="${product.name}" />
@@ -81,7 +81,7 @@ const renderProducts = (products) => {
   });
 };
 
-fetch("../data/products.json")
+fetch("/data/products.json")
   .then((res) => res.json())
   .then((jsonProducts) => {
     const localProducts = getLocalProducts();
