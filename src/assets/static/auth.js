@@ -64,7 +64,10 @@ function updateUserActions() {
                     <img src="https://ui-avatars.com/api/?name=${encodeURIComponent(user.name)}&background=0D8ABC&color=fff" alt="Profile" class="profile-image">
                     <span class="profile-name">${user.name}</span>
                 </div>
-                <button onclick="logout()">Log Out</button>
+                <div class="profile-menu">
+                    <a href="dashboard.html" class="menu-item">Dashboard</a>
+                    <button onclick="logout()" class="menu-item">Log Out</button>
+                </div>
             </div>
         `;
     } else {
@@ -87,8 +90,8 @@ function updateUserActions() {
 // Register functionality
 $(document).ready(function() {
     // Redirect if already logged in
-    if (isLoggedIn()) {
-        window.location.href = 'index.html';
+    if (isLoggedIn() && !window.location.href.includes('dashboard.html')) {
+        window.location.href = 'dashboard.html';
         return;
     }
 
@@ -165,16 +168,16 @@ $(document).ready(function() {
         // Show success message
         alert('Registration successful! Redirecting...');
 
-        // Redirect to home page
-        window.location.href = 'index.html';
+        // Redirect to dashboard
+        window.location.href = 'dashboard.html';
     });
 });
 
 // Login functionality
 $(document).ready(function() {
     // Redirect if already logged in
-    if (isLoggedIn()) {
-        window.location.href = 'index.html';
+    if (isLoggedIn() && !window.location.href.includes('dashboard.html')) {
+        window.location.href = 'dashboard.html';
         return;
     }
 
@@ -204,8 +207,8 @@ $(document).ready(function() {
             // Show success message
             alert('Login successful! Redirecting...');
             
-            // Redirect to home page
-            window.location.href = 'index.html';
+            // Redirect to dashboard
+            window.location.href = 'dashboard.html';
         } else {
             alert('Invalid email or password');
         }
