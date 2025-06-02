@@ -193,9 +193,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         if (checkoutButton) {
-            checkoutButton.addEventListener('click', () => {
-                alert('Proceeding to checkout! (Functionality to be implemented)');
-            });
+            // No alert needed, the button is wrapped in an anchor tag now
         }
 
         // Initial render for cart.html page
