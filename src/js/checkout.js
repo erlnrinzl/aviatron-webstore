@@ -12,7 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     let selectedPaymentMethod = null;
-    const shippingCost = 10000; // Example shipping cost
+    const DEFAULT_SHIPPING_COST = 10000; // Default shipping cost
+    const shippingCost = DEFAULT_SHIPPING_COST;
 
     function formatPrice(price) {
         return `Rp ${price.toLocaleString('id-ID')}`;
