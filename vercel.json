@@ -3,6 +3,8 @@
   "routes": [
     { "src": "/", "dest": "pages/index.html" },
     { "src": "../styles/(.*)", "dest": "styles/$1" },
-    { "src": "/pages/(.*)", "dest": "pages/$1" }
+    { "src": "/pages/(.*)", "dest": "pages/$1" },
+    { "src": "../js/(.*)", "dest": "js/$1" },
+    { "src": "../assets/(.*)", "dest": "js/$1" }
   ]
 }
