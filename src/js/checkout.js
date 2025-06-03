@@ -31,8 +31,23 @@ document.addEventListener('DOMContentLoaded', () => {
         cart.forEach(item => {
             const itemElement = document.createElement('div');
             itemElement.classList.add('cart-item-summary');
+
+            let imageUrl = item.image; // Default to item.image (could be data URI or undefined)
+            if (item.image && typeof item.image === 'string' && !item.image.startsWith('data:image')) {
+                // If it's a string and not a data URI, assume it's a filename
+                let imageName = item.image;
+                try {
+                    // Decode if it's URL encoded. If not, decodeURIComponent often returns it as is.
+                    imageName = decodeURIComponent(item.image);
+                } catch (e) {
+                    console.warn('Failed to decode image name:', item.image, e);
+                    // Fallback to using item.image as is if decoding fails, though unlikely for these names
+                }
+                imageUrl = `/assets/images/${imageName}.jpg`;
+            }
+
             itemElement.innerHTML = `
-                <img src="${item.image}" alt="${item.name}">
+                <img src="${imageUrl || ''}" alt="${item.name || 'Product Image'}">
                 <div class="item-info">
                     <p>${item.name}</p>
                     <p>${item.quantity} x ${formatPrice(item.price)}</p>
