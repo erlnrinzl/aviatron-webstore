@@ -237,8 +237,12 @@ $(document).ready(function () {
       // Show success message
       alert("Login successful! Redirecting...");
 
-      // Redirect to dashboard
-      window.location.href = "dashboard.html";
+      // Redirect based on role
+      if (user.role === "admin") {
+        window.location.href = "admin-products.html";
+      } else {
+        window.location.href = "dashboard.html";
+      }
     } else {
       alert("Invalid email or password");
     }
