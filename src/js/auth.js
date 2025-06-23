@@ -118,8 +118,8 @@ function updateUserActions() {
 // Register functionality
 $(document).ready(function () {
   // Redirect if already logged in
-  if (isLoggedIn() && !window.location.href.includes("dashboard.html")) {
-    window.location.href = "dashboard.html";
+  if (isLoggedIn() && window.location.href.includes("register.html")) {
+    window.location.href = "index.html";
     return;
   }
 
@@ -204,8 +204,8 @@ $(document).ready(function () {
 // Login functionality
 $(document).ready(function () {
   // Redirect if already logged in
-  if (isLoggedIn() && !window.location.href.includes("dashboard.html")) {
-    window.location.href = "dashboard.html";
+  if (isLoggedIn() && window.location.href.includes("login.html")) {
+    window.location.href = "index.html";
     return;
   }
 
@@ -238,11 +238,11 @@ $(document).ready(function () {
       alert("Login successful! Redirecting...");
 
       // Redirect based on role
-      if (user.role === "admin") {
-        window.location.href = "admin-products.html";
-      } else {
-        window.location.href = "dashboard.html";
-      }
+      // if (user.role === "admin") {
+      //   window.location.href = "admin-products.html";
+      // } else {
+      //   window.location.href = "dashboard.html";
+      // }
     } else {
       alert("Invalid email or password");
     }

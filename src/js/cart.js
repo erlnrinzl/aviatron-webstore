@@ -120,7 +120,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         itemElement.innerHTML = `
                     <div class="cart-item-image">
-                        <img src="/assets/images/${item.image}.jpg" alt="${
+                        <img src="./assets/images/${item.image}.jpg" alt="${
           item.name
         }">
                     </div>

@@ -11,7 +11,7 @@ $(document).ready(function () {
 
   function loadProductData() {
     $.ajax({
-      url: "/data/products.json",
+      url: "./data/products.json",
       method: "GET",
       dataType: "json",
       success: function (response) {
@@ -26,7 +26,7 @@ $(document).ready(function () {
         $(".product-title").text(product.name);
         $(".price-value").text(`Rp${product.price}`);
         $(".product-description").text(product.description);
-        $("#mainImage").attr("src", "/assets/images/" + product.image + ".jpg");
+        $("#mainImage").attr("src", "./assets/images/" + product.image + ".jpg");
         $(".product-category").text(product.category);
 
         $(".specs-table").empty();
@@ -43,12 +43,32 @@ $(document).ready(function () {
           addToCart(product);
           updateNavCartCount(); // Call imported function
 
-          Swal.fire({
-            title: "Success!",
-            text: `${productName} has been added to your cart for ${productPrice}`,
-            icon: "success",
-            confirmButtonText: "OK",
+          showModal({
+            title: product.name,
+            html: `
+              <img src="${product.image}" alt="${product.name}" style="max-width:100%;margin-bottom:1rem;">
+              <p>${product.description}</p>
+              <button class="btn add-to-cart">Add to Cart</button>
+            `,
+            showConfirm: false,
+            showClose: true
           });
+
+          // Attach event after modal is shown
+          setTimeout(() => {
+            const addBtn = document.querySelector('.custom-modal .add-to-cart');
+            if (addBtn) addBtn.onclick = () => {
+              addToCart(product);
+              hideModal();
+              showModal({
+                title: 'Success!',
+                html: '<p>Added to cart!</p>',
+                showConfirm: false,
+                showClose: false
+              });
+              setTimeout(hideModal, 1200);
+            };
+          }, 0);
         });
       },
     });

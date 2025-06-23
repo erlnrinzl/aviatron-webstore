@@ -24,7 +24,7 @@ const saveLocalProducts = (data) =>
 // Ambil produk dari JSON + local
 const loadAllProducts = async () => {
   try {
-    const res = await fetch("/data/products.json");
+    const res = await fetch("./data/products.json");
     const json = await res.json();
     const local = getLocalProducts();
     const combined = [...json];
@@ -50,7 +50,7 @@ const populateForm = (product) => {
 
   const imageSrc = product.image?.startsWith("data:image")
     ? product.image
-    : `/assets/images/${product.image}.jpg`;
+    : `./assets/images/${product.image}.jpg`;
 
   previewImg.src = imageSrc;
 

@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     console.warn('Failed to decode image name:', item.image, e);
                     // Fallback to using item.image as is if decoding fails, though unlikely for these names
                 }
-                imageUrl = `/assets/images/${imageName}.jpg`;
+                imageUrl = `./assets/images/${imageName}.jpg`;
             }
 
             itemElement.innerHTML = `

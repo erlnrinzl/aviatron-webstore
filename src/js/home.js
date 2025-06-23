@@ -1,9 +1,9 @@
 $(document).ready(function () {
-  // $.getJSON('/data/products.json', function(products) {
+  // $.getJSON('./data/products.json', function(products) {
 
   // });
 
-  $.getJSON("/data/categories.json", function (categories) {
+  $.getJSON("./data/categories.json", function (categories) {
     const categoryList = $(".category-list");
     categoryList.empty();
 
@@ -13,7 +13,7 @@ $(document).ready(function () {
       listItem.addClass("card");
       listItem.html(`
         <div class="card-image">
-          <img src="/assets/images/${category.image}.jpg" alt="Category Image" />
+          <img src="./assets/images/${category.image}.jpg" alt="Category Image" />
         </div>
         <div class="card-content">
           <h3>${category.name}</h3>
